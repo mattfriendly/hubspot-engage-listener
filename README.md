@@ -47,3 +47,51 @@ This repository contains two implementations of a microserver designed to proces
    ```bash
    go run main.go
    ```
+
+### Node.js Implementation
+
+1. **Install Node.js and NPM:** Ensure they are installed on your machine.
+
+## Endpoints
+
+### `POST /hubspot-webhook`
+
+**Description:** Processes incoming webhooks from HubSpot. Validates requests based on HMAC signatures and IP allow-list.
+
+**Response Codes:**
+- `200 OK`: Webhook successfully processed.
+- `403 Forbidden`: Invalid signature or unauthorized IP.
+
+---
+
+## Key Differences Between Implementations
+
+| Feature             | Go Implementation        | Node.js Implementation  |
+|---------------------|--------------------------|--------------------------|
+| **Language**        | Go                      | JavaScript (Node.js)    |
+| **TLS Support**     | Native TLS via `ListenAndServeTLS` | Requires reverse proxy for HTTPS |
+| **Middleware**      | Custom request handler  | Express middleware       |
+| **Signature Logic** | Uses HMAC with `sha256` | Creates hash with `crypto` |
+
+---
+
+## Security
+
+- **Environment Variables:** Ensure sensitive values like `CLIENT_SECRET` are stored securely.
+- **TLS Certificates (Go):** Place them in a secure location and restrict access.
+
+---
+
+## Contributing
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Submit a pull request for review.
+
+---
+
+## License
+
+
+---
+
