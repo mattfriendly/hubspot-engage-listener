@@ -34,7 +34,8 @@ This repository contains two implementations of a microserver designed to proces
 2. **Clone Repository:**
    ```bash
    git clone <repository-url>
-   cd hubspot-microserver-go```
+   cd hubspot-microserver-go
+   ```
 3. Set Environment Variables: Use a .env file or export them directly:   
    ```bash
    export HOST=0.0.0.0
